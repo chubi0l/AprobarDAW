@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+
+<body>
+    <h1>Marvel Pop Paradise</h1>
+    <a [routerLink]="/admin" *ngIf="userRole == 'ROLE_ADMIN'">Panel de administrador</a>
+    <ul>
+        <li *ngFor="let funko of funkos">
+            <span [ngStyle]="funko.price >= 100 ? {'color': 'red'} : {'color': 'green'}">{{funko.name}} - {{funko.price}}$ - <button (click)="goToBuy(funko)">Comprar</button></span>
+        </li>
+    </ul>
+</body>
+
+</html>
