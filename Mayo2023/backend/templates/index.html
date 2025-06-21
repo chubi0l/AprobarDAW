@@ -1,0 +1,32 @@
+<html>
+	<body>
+
+		<h1>Contactos</h1>
+
+		<form action="/createContact" method="post">
+			<div>
+				<label>Nombre: </label>
+				<input name="name" placeholder="Nombre" required/>
+			</div>
+            
+            <div>
+				<label>Número de teléfono: </label>
+				<input name="phoneNumber" placeholder="Número de teléfono" required/>
+			</div>
+
+			<div>
+				<label>Descripción: </label>
+				<input name="description" placeholder="Descripción"/>
+			</div>
+
+			<input type="submit" value="Crear"/>
+		</form>
+
+		<ul>
+			{{#contacts}}
+			<li>Nombre: {{name}}, Número teléfono: {{phoneNumber}}, Descripción {{description}} <a href="/deleteContact/{{id}}">Borrar</a></li>
+			{{/contacts}}
+		</ul>
+
+	</body>
+</html>

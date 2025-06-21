@@ -31,7 +31,7 @@ public class ContactService {
 
 		Contact contact = toDomain(contactDTO);
 
-		repository.save(repository);
+		repository.save(contact);
 
 		return toDTO(contact);
 	}
