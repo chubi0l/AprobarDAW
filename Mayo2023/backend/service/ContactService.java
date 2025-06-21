@@ -16,7 +16,7 @@ public class ContactService {
     private ContactMapper mapper;
 
     public Collection<ContactDTO> getContacts() {
-		return toDTOs(repository.findByIdOrderByName(id));
+		return toDTOs(repository.findByIdOrderByName());
 	}
 
 	public ContactDTO getContact(long id) {
@@ -47,11 +47,11 @@ public class ContactService {
 		return contactDTO;
 	}
 
-	private ContactDTO toDTO(Ad contact) {
+	private ContactDTO toDTO(Contact contact) {
 		return mapper.toDTO(contact);
 	}
 
-	private Ad toDomain(ContactDTO adDTO) {
+	private Contact toDomain(ContactDTO contactDTO) {
 		return mapper.toDomain(contactDTO);
 	}
 

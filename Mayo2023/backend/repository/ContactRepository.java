@@ -5,8 +5,8 @@ import java.util.Optional;
 
 import Mayo2023.backend.model.Contact;
 
-public interface ContactRepository extends JpaRepository <Long,Contact>{
-    public List<Contact> findByIdOrderByName(Long id);
+public interface ContactRepository extends JpaRepository <Contact,Long>{
+    public List<Contact> findByIdOrderByName();
     public Optional<Contact> findByName(String name);
     public Optional<Contact> findById(Long id);
 }

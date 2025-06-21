@@ -1,5 +1,8 @@
 package Mayo2023.backend.controller;
 
+import java.util.List;
+
+import Mayo2023.backend.model.Contact;
 import Mayo2023.backend.service.ContactService;
 // Imports
 
@@ -10,6 +13,9 @@ public class ContactController {
 
 	@GetMapping("/")
 	public String showContacts() {
+		List<Contact> contacts = contactService.getContacts();
+		model.addAttribute("contacts", contacts);
+		model.addAttribute("contact", new Contact()); // Para el formulario
 		contactService.getContacts();
 
 		return "index";

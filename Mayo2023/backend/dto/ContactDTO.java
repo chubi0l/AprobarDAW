@@ -4,5 +4,5 @@ public record ContactDTO (
     Long id,
     String name,
     String description,
-    int phoneNumber) {
+    String phoneNumber) {
 }
