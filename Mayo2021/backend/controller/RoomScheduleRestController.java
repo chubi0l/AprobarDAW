@@ -1,29 +1,29 @@
 package Mayo2021.backend.controller;
 
+import java.util.List;
+
 import Mayo2021.backend.dto.RoomScheduleDTO;
 import Mayo2021.backend.service.RoomScheduleService;
 
 @RestController
-@RequestMapping("api/roomSchedules")
+@RequestMapping("api/schedules")
 public class RoomScheduleRestController {
     
     @Autowired
-    private RoomScheduleService roomScheduleService;
+    private RoomScheduleService service;
 
     @GetMapping("/")
     public List<RoomScheduleDTO> getSchedules () {
-        return roomScheduleService.getSchedules();
+        return service.getSchedules();
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}/reserve")
     public RoomScheduleDTO reserveRoom(@RequestParam String reserverName, @PathVariable Long id) {
-        RoomScheduleDTO roomSchedule = roomScheduleService.getSchedule(id);
-        return roomScheduleService.reserveRoom(roomSchedule, reserverName);
+        return service.reserveRoom(id, reserverName);
     }
 
     @PutMapping("/{id}")
     public RoomScheduleDTO cancelReserve(@PathVariable Long id) {
-        RoomScheduleDTO roomSchedule = roomScheduleService.getSchedule(id);
-        return roomScheduleService.cancelReserve(roomSchedule);
+        return service.cancelReserve(id);
     }
 }

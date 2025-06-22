@@ -1,0 +1,22 @@
+<h1>Reservar sala</h1>
+
+<ul>
+  <li *ngFor="let room of hours">
+    <span>Hora: {{ room.hour }}</span> -
+    <span *ngIf="room.free">Libre</span>
+    <span *ngIf="!room.free">Reservado por: {{ room.reserver }}</span>
+
+    <!-- Estado libre -->
+    <button *ngIf="room.free && editingId !== room.id" (click)="startReservation(room)">
+      Reservar
+    </button>
+
+    <div *ngIf="editingId === room.id">
+      <input [(ngModel)]="room.reserver" placeholder="Tu nombre" />
+      <button (click)="saveReservation(room)">Guardar</button>
+    </div>
+
+    <!-- Estado reservado -->
+    <button *ngIf="!room.free" (click)="cancelReservation(room)">Anular</button>
+  </li>
+</ul>
