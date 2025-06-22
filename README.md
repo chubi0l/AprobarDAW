@@ -1,2 +1,2 @@
 # AprobarDAW
-Por favor, necesitamos aprobar DAW como sea, gracias.
+Por favor, necesitamos aprobar DAW, gracias.

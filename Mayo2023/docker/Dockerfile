@@ -1,13 +1,13 @@
 FROM NODE:16.0.0 AS frontend 
 WORKDIR /project
-COPY /frontend/package.json/ /project/
+COPY /frontend .
 RUN npm install
 RUN npm build -- --configuration production
 
 FROM maven:3.11.0 AS backend
 WORKDIR /project
 COPY /backend/pom.xml /project/
-COPY --from=frontend /project/dist/frontend/browser/ /project/src/main/resources
+COPY --from=frontend /project/dist/frontend/browser/ /project/src/main/resources/contact
 RUN mvn package -o--DskipTests=true
 
 

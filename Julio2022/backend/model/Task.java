@@ -3,7 +3,8 @@ package Julio2022.backend.model;
 import javax.annotation.processing.Generated;
 
 public class Task {
-    @GeneratedType(...)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String description;

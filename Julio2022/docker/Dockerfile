@@ -1,6 +1,6 @@
 FROM node:14.0.0 as frontend
 WORKDIR /project 
-COPY frontend/package.json /project/
+COPY frontend .
 RUN npm install
 RUN npm build -- -- configuration production
 
