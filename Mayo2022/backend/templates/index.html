@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <h1>Conciertos MusiURJC</h1>
+
+        <form method="post" action="/createConcert">
+            <label>Título</label>
+            <input type="text" placeholder="Título" name="title"></input>
+
+            <label>Fecha</label>
+            <input type="text" placeholder="Fecha" name="date"></input>
+
+            <label>Sala</label>
+            <input type="text" placeholder="Sala" name="room"></input>
+
+            <button type="submit" >Crear</button>
+        </form>
+
+        <ul>
+            {{#concerts}}
+                <li>Título: {{title}}, fecha: {{date}}, sala: {{room}}</li>
+            {{/concerts}}
+        </ul>
+    </body>
+</html>

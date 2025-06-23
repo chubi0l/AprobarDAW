@@ -6,7 +6,6 @@ import Julio2022.backend.dto.TaskDTO;
 import Julio2022.backend.dto.TaskMapper;
 import Julio2022.backend.model.Task;
 import Julio2022.backend.repository.TaskRepository;
-import Mayo2023.backend.model.Contact;
 
 public class TaskService {
     @Autowired
@@ -25,7 +24,7 @@ public class TaskService {
 
     public TaskDTO createTask(TaskDTO taskDTO) {      
 
-        if (taskRepository.findById(contactDTO.id()).isPresent()) {
+        if (taskRepository.findById(taskDTO.id()).isPresent()) {
 			return null;
 		}
 
@@ -39,7 +38,7 @@ public class TaskService {
     }
 
     public TaskDTO deleteTask(Long id) {
-        Task task = taskRepository.findById(contactDTO.id()).orElseThrow();
+        Task task = taskRepository.findById(taskDTO.id()).orElseThrow();
 
 		TaskDTO taskDTO = taskMapper.toDTO(task);
 
