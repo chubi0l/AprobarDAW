@@ -1,0 +1,18 @@
+<h1>Conciertos MusiURJC</h1>
+
+<form>
+    <label>Título:</label>
+    <input [(ngModel)]="concert.title" type="text" placeholder="Título" />
+    <label>Fecha:</label>
+    <input [(ngModel)]="concert.date" type="text" placeholder="Fecha">
+    <label>Sala:</label>
+    <input [(ngModel)]="concert.room" type="text" placeholder="Sala">
+    <button (click)="createConcert()">Crear</button>
+</form>
+
+<ul>
+    <span>Conciertos</span>
+    <li *ngFor="let concert in concerts">
+        <a [routerLink]="['/concerts']">Titulo: {{concert.title}}, Fecha: {{concert.date}}, Sala: {{concert.room}}</a>
+    </li>
+</ul>
