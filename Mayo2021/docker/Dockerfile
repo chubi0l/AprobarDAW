@@ -1,6 +1,6 @@
 FROM node:14.0.0 as frontend
 WORKDIR /project
-COPY /frontend/package.json/ /project/
+COPY frontend .
 RUN npm install
 RUN npm build -- -- configuration-production--base-href=/libros/
 
@@ -9,7 +9,7 @@ WORKDIR /project
 COPY /backend/pom.xml/ /project/
 RUN mvn clean install
 COPY backend/src/ project/src
-COPY --from=frontend/project/distn/frontend/browser/ /project/src/main/resources/libros
+COPY --from=frontend/project/distn/frontend/browser/ /project/src/main/resources/static
 RUN mvn clean package -oDskipTest = true
 
 FROM openjdk-jre:11.0.0

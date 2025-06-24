@@ -15,8 +15,8 @@ public class ContactService {
     @Autowired
     private ContactMapper mapper;
 
-    public Collection<ContactDTO> getContacts() {
-		return toDTOs(repository.findByIdOrderByName());
+    public List<ContactDTO> getContacts() {
+		return toDTOs(repository.findAllOrderByName());
 	}
 
 	// public ContactDTO getContact(long id) { 				Unnesesary and if should have a if == null...
