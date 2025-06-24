@@ -10,7 +10,6 @@ COPY /backend/pom.xml /project/
 COPY --from=frontend /project/dist/frontend/browser/ /project/src/main/resources/static
 RUN mvn package -o--DskipTests=true
 
-
 FROM openjdk-jre:11.0.0
 WORKDIR /usr/src/app
 COPY --from=backend/project/target/*.jar / usr/src/app/

@@ -5,7 +5,7 @@ export class ConcertService = {
     
     constructor(private httpClient: HttpClient) {}
     
-    getConcerts() Observable<ConcertDTO> {
+    public getConcerts(): Observable<ConcertDTO> {
         return this.httpClient.get(this.BASE_URL) as Observable<ConcertDTO[]>;
     }
 

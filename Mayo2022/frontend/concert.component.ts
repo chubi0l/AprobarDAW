@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     );
   }
 
-  public createAd() {
+  public createConcert() {
     this.concertService.createConcert(this.concert).subscribe(
       () => this.loadConcerts(),
       () => alert("Error al crear el concierto"));

@@ -24,7 +24,7 @@ public class ContactController {
 		Contact createdContact = contactService.createContact(contact);
 
 		if (createdContact == null) {
-			return "redirect:/error";
+			return "error";
 		} else {
 			return "redirect:/";
 		}
@@ -35,14 +35,9 @@ public class ContactController {
 		Contact deletedContact = contactService.deleteContact(id);
 
 		if (deletedContact == null) {
-			return "redirect:/error";
+			return "error";
 		} else {
 			return "redirect:/";
 		}
-	}
-
-	@GetMapping("/error")
-	public String showError() {
-		return "error";
 	}
 }
