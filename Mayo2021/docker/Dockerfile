@@ -16,3 +16,4 @@ FROM openjdk-jre:11.0.0
 WORKDIR /usr/src/app
 COPY --from=backend/project/target/*.jar /usr/src/app/
 EXPOSE 8080
+CMD ["java", "-jar", "backend.jar"]
