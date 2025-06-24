@@ -15,8 +15,6 @@ public class ContactController {
 	public String showContacts() {
 		List<Contact> contacts = contactService.getContacts();
 		model.addAttribute("contacts", contacts);
-		model.addAttribute("contact", new Contact()); // Para el formulario
-		contactService.getContacts();
 
 		return "index";
 	}

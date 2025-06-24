@@ -17,7 +17,10 @@ public class ConcertService {
     }
 
     public ConcertDTO createConcert(ConcertDTO concertDTO) {
-        if (repository.findById(concertDTO.room && concertDTO.date()).isPresent()) {
+        List<Concert> concertsByRoom = repository.findByRoom(concertDTO.room());
+        List<Concert> concertsByDate = repository.findByDate(concertDTO.date());
+
+        if (!concertsByRoom.isEmpty() || !concertsByDate.isEmpty()) {
             return null;
         }
         

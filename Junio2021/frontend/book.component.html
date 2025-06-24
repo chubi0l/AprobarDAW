@@ -4,12 +4,15 @@
         <input placeholder="Buscar" [(ngModel)]="book.title"></input>
         <button (click)="searchBooks()">Buscar</button>
 
+        <img src="/assets/spinner.gif" *ngIf="loading">
+
         <ul>
             <li *ngFor="let book of books" [style.color]="book.offer ? 'green' : 'black'">
                 Título: {{ book.title }}, Precio: {{ book.price }}
             </li>
         </ul>
 
-        <p *ngIf="books.length === 0 && searchPerformed">No hay resultados</p>
+        <p *ngIf="books.length === 0 && searchPerformed && !loading">No hay resultados</p>
+
     </body>
 </html>

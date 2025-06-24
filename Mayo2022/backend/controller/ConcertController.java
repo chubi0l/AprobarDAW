@@ -15,9 +15,6 @@ public class ConcertController {
     public String getConcerts() {
         List<Concert> concerts = service.getConcerts();
 		model.addAttribute("concerts", concerts);
-		model.addAttribute("concerts", new Concert());
-
-        service.getConcerts();
 
         return "index.html";
     }

@@ -13,6 +13,6 @@
 <ul>
     <span>Conciertos</span>
     <li *ngFor="let concert in concerts">
-        <a [routerLink]="['/concerts']">Titulo: {{concert.title}}, Fecha: {{concert.date}}, Sala: {{concert.room}}</a>
+        <p>Titulo: {{concert.title}}, Fecha: {{concert.date}}, Sala: {{concert.room}}</p>
     </li>
 </ul>

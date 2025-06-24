@@ -19,9 +19,9 @@ public class ContactService {
 		return toDTOs(repository.findByIdOrderByName());
 	}
 
-	public ContactDTO getContact(long id) {
-		return toDTO(repository.findById(id).orElseThrow());
-	}
+	// public ContactDTO getContact(long id) { 				Unnesesary and if should have a if == null...
+	// 	return toDTO(repository.findById(id).orElseThrow());
+	// }
 
 	public ContactDTO createContact(ContactDTO contactDTO) {
 
